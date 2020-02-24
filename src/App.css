@@ -14,7 +14,7 @@ body {
 }
 
 .text-title {
-  font-family: "Poppins", 800;
+  font-family: "Poppins" !important;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
