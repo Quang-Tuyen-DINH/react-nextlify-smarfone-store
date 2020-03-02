@@ -32,9 +32,9 @@ export default class Product extends Component {
           </div>
 
           {/* Card footer */}
-          <div className="card-footer d-flex justify-content-below">
+          <div className="card-footer d-flex justify-content-between">
             <p className="align-seft-center mb-0">{title}</p>
-            <h5 className="text-blue font-italic mb-0">
+            <h5 className="text-blue font-weight-bold mb-0">
               <span className="mr-1">€</span>
               {price}
             </h5>
