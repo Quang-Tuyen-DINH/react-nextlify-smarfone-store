@@ -22,7 +22,7 @@ export default class Details extends Component {
                   <h5 className="text-title text-uppercase text-muted mt-3 mb-2">
                     made by: <span className="text-uppercase">{company}</span>
                   </h5>
-                  <h4 className="text-success">
+                  <h4 className="text-danger">
                     <strong>price: <span>€</span>{price}</strong>
                   </h4>
                   <p className="text-muted mt-3 mb-0">
@@ -34,6 +34,7 @@ export default class Details extends Component {
                       <ButtonContainer>back to products</ButtonContainer>
                     </Link>
                     <ButtonContainer
+                    cart
                     disabled={inCart ? true : false}
                     onClick={() => {value.addToCart(id)}}
                     >
