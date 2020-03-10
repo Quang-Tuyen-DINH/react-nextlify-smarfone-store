@@ -28,6 +28,9 @@ export default class Details extends Component {
                   <p className="text-muted mt-3 mb-0">
                     {info}
                   </p>
+                  <strong>
+                    <span></span>
+                  </strong>
                   {/* button */}
                   <div>
                     <Link to='/'>

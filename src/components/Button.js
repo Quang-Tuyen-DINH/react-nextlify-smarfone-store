@@ -20,7 +20,7 @@ export const CartButton = styled.a`
 
 export const ButtonContainer = styled.a`
   display: inline-block;
-  border-radius: 0.6rem;
+  border-radius: 0.4rem;
   padding: 0.4rem 0.4rem;
   margin: 2rem 1rem 1rem 0;
   background: white;
