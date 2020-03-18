@@ -18,7 +18,7 @@ export default class Details extends Component {
                 </div>
                 {/* product description */}
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                  <h2><strong>{title}</strong></h2>
+                  <h2 className="text-title"><strong>{title}</strong></h2>
                   <h5 className="text-title text-uppercase text-muted mt-3 mb-2">
                     made by: <span className="text-uppercase">{company}</span>
                   </h5>
@@ -39,7 +39,10 @@ export default class Details extends Component {
                     <ButtonContainer
                     cart
                     disabled={inCart ? true : false}
-                    onClick={() => {value.addToCart(id)}}
+                    onClick={() => {
+                      value.addToCart(id);
+                      value.openModal(id);
+                    }}
                     >
                       {inCart ? 'Already In Cart' : 'add to cart'}
                     </ButtonContainer>
