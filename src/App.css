@@ -32,10 +32,20 @@ body {
   background-color: #4EA0F8 !important;
   color: var(--mainWhite) !important;
   font-size: 1rem !important;
+  font-weight: bold !important;
 }
 
 .btn-cart:hover {
   background-color: var(--mainWhite) !important;
   color: var(--lightBlue) !important;
   border: 0.1rem solid var(--lightBlue);
+}
+
+.cart-icon {
+  color: orange;
+}
+
+.cart-icon:hover {
+  cursor: pointer;
+  color: red;
 }
