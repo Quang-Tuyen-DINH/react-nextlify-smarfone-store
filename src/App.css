@@ -26,3 +26,16 @@ body {
 .text-bright {
   color: var(--lightBlue);
 }
+
+.btn-cart {
+  width: 2.3rem;
+  background-color: #4EA0F8 !important;
+  color: var(--mainWhite) !important;
+  font-size: 1rem !important;
+}
+
+.btn-cart:hover {
+  background-color: var(--mainWhite) !important;
+  color: var(--lightBlue) !important;
+  border: 0.1rem solid var(--lightBlue);
+}

@@ -9,7 +9,7 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart: [],
+    cart: storeProducts,
     openedModal: false,
     modalProduct: detailProduct,
     cartSubTotal: 0,

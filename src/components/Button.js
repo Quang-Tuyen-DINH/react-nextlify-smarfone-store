@@ -32,5 +32,6 @@ export const ButtonContainer = styled.a`
   &:hover{
     background: ${props => props.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
     color: var(--mainWhite) !important;
+    cursor: pointer;
 }
 `;

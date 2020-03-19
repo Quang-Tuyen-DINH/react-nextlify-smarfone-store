@@ -1,14 +1,34 @@
 import React, { Component } from 'react'
 import Title from '../Title';
-import CartColumns from './CartColumns'
+import CartColumns from './CartColumns';
+import EmptyCart from './EmptyCart';
+import { ProductConsumer } from '../../context';
+import CartList from './CartList';
 
 export default class Cart extends Component {
   render() {
     return (
-      <div>
-        <Title name="your" title="cart" />
-        <CartColumns />
-      </div>
+      <section>
+        <ProductConsumer>
+          {value => {
+            const { cart } = value;
+            if (cart.length > 0) {
+              return (
+                <React.Fragment>
+                  <div className="py-5">
+                    <Title title="your cart" style={{}} />
+                    <CartColumns />
+                    <CartList value={value} />
+                  </div>
+                </React.Fragment>
+              );
+            } else {
+              return <EmptyCart />;
+            }
+          }}
+        </ProductConsumer>
+
+      </section>
     )
   }
 }
