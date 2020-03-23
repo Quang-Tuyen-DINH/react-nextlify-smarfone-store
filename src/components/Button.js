@@ -6,15 +6,15 @@ export const CartButton = styled.a`
   padding: 0.4rem 0.4rem;
   margin: 1rem 1rem;
   width: 8rem;
-  background: #4ea0f8;
-  color: var(--mainWhite) !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainYellow) !important;
   border: 2px solid white;
   text-align: center;
   border: 0.1rem solid var(--mainWhite);
   transition: all 0.3s ease-in-out;
   &:hover{
-    background: white;
-    color: var(--DarkBlue) !important;
+    background: var(--mainYellow) !important;
+    color: var(--mainWhite) !important;
   }
 `;
 

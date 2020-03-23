@@ -9,7 +9,7 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart: storeProducts,
+    cart: [],
     openedModal: false,
     modalProduct: detailProduct,
     cartSubTotal: 0,
@@ -52,7 +52,9 @@ class ProductProvider extends Component {
         products: tempProducts,
         cart: [...this.state.cart, product]
       };
-    }, () => {console.log(this.state);});
+    }, () => {
+      this.addTotals();
+    });
 
   };
   openModal = id => {
@@ -76,8 +78,26 @@ class ProductProvider extends Component {
     console.log('this is remove method');
   }
   clearCart = () => {
-    console.log('Cart cleared');
+    this.setState(() => {
+      return {cart:[]};
+    }, () => {
+      this.setProducts();
+    });
   };
+  addTotals = () => {
+    let subTotal = 0;
+    this.state.cart.map(item => (subTotal += item.total));
+    const tempTax = subTotal * 0.3;
+    const tax = parseFloat(tempTax.toFixed(2));
+    const total = subTotal + tax;
+    this.setState(() => {
+      return {
+        cartSubTotal: subTotal,
+        cartTax: tax,
+        cartTotal: total,
+      }
+    })
+  }
 
   render() {
     return (

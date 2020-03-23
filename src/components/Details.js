@@ -23,7 +23,7 @@ export default class Details extends Component {
                     made by: <span className="text-uppercase">{company}</span>
                   </h5>
                   <h4 className="text-danger">
-                    <strong>price: <span>€</span>{price}</strong>
+                    <strong>price: <span>€</span> {price}</strong>
                   </h4>
                   <p className="text-muted mt-3 mb-0">
                     {info}
