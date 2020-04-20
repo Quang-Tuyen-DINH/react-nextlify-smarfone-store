@@ -30,7 +30,7 @@ class ProductProvider extends Component {
     })
   };
   getItem = (id) => {
-    const product = this.state.products.find(item =>item.id === id);
+    const product = this.state.products.find(item => item.id === id);
     return product;
   };
   handleDetail = (id) => {
@@ -75,13 +75,32 @@ class ProductProvider extends Component {
     console.log('this is decrement method');
   };
   removeItem = (id) => {
-    console.log('this is remove method');
-  }
+    let tempProducts = [...this.state.products];
+    let tempCart = [...this.state.cart];
+
+    tempCart = tempCart.filter(item => item.id !== id);
+
+    const index = tempProducts.indexOf(this.getItem(id));
+    let removedProduct = tempProducts[index];
+    removedProduct.inCart = false;
+    removedProduct.count = 0;
+    removedProduct.total = 0;
+
+    this.setState(() => {
+      return {
+        cart: [...tempCart],
+        products: [...tempProducts]
+      }
+    }, () => {
+      this.addTotals();
+    });
+  };
   clearCart = () => {
     this.setState(() => {
       return {cart:[]};
     }, () => {
       this.setProducts();
+      this.addTotals();
     });
   };
   addTotals = () => {
